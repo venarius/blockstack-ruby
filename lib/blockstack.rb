@@ -118,7 +118,7 @@ module Blockstack
     json = JSON.parse response.body
 
     fail "Issuer claimed username that doesn't exist" if response.status == 404
-    fail "Unable to verify issuer's claimed username" if response.status != 200
+    # fail "Unable to verify issuer's claimed username" if response.status != 200
 
     name_owning_address = json['address']
     address_from_issuer = get_address_from_did decoded_token['iss']
