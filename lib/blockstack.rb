@@ -76,7 +76,7 @@ module Blockstack
 
     decoded_token = verify_with_signature(auth_token, public_keys)
     fail InvalidAuthResponse.new("Public keys don't match issuer address") unless self.public_keys_match_issuer?(decoded_token)
-    fail InvalidAuthResponse.new("Public keys don't match owner of claimed username") unless self.public_keys_match_username?(decoded_token)
+    # fail InvalidAuthResponse.new("Public keys don't match owner of claimed username") unless self.public_keys_match_username?(decoded_token)
 
     return decoded_token
   rescue JWTB::VerificationError
